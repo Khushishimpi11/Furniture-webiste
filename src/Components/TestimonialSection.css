@@ -1,0 +1,342 @@
+.testimonial-section {
+  width: 100%;
+  background: #605436;
+  padding: 80px 0;
+  color: #fff;
+}
+
+.testimonial-wrapper {
+  max-width: 1400px !important;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+}
+
+.testimonial-left {
+  width: 40%;
+}
+
+.testimonial-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border: 2px solid #a48a5e;
+  padding: 15px;
+}
+
+.testimonial-right {
+  width: 60%;
+}
+
+.testimonial-title {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.testimonial-title span {
+  color: #e2bf7b;
+}
+
+/* Rating Row */
+.rating-row {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 25px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.rating {
+  font-size: 54px;
+  font-weight: 700;
+}
+
+.stars div svg {
+  margin-right: 4px;
+  color: #e2bf7b;
+}
+
+.stars p {
+  margin: 0;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.rating-text {
+  font-size: 20px !important;
+  line-height: 1.4;
+}
+
+.arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.arrows button {
+  background: #f7f4ef;
+  border: none;
+  padding: 12px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  color: #000;
+  transition: 0.3s;
+}
+
+.arrows button:hover {
+  background: #e2bf7b;
+}
+
+/* SLIDER */
+.slider-box {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 20px;
+}
+
+.slide-inner {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.single-slide {
+  min-width: 100%;
+  padding-right: 20px;
+}
+
+.testimonial-text {
+  font-size: 24px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* Client Info */
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.client-icon {
+  font-size: 50px;
+  color: #f7f4ef;
+}
+
+/* Tablet View (769px - 1024px) */
+@media (max-width: 1024px) {
+  .testimonial-section {
+    padding: 60px 0;
+  }
+  
+  .testimonial-wrapper {
+    max-width: 95%;
+    gap: 30px;
+    padding: 0 30px;
+  }
+  
+  .testimonial-title {
+    font-size: 42px;
+  }
+  
+  .testimonial-image {
+    height: 400px;
+  }
+  
+  .rating {
+    font-size: 48px;
+  }
+  
+  .rating-text {
+    font-size: 18px !important;
+  }
+  
+  .testimonial-text {
+    font-size: 22px;
+  }
+  
+  .rating-row {
+    gap: 20px;
+  }
+}
+
+/* Small Tablet (769px - 900px) */
+@media (max-width: 900px) {
+  .testimonial-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .testimonial-left,
+  .testimonial-right {
+    width: 80%;
+  }
+  
+  .testimonial-image {
+    height: 350px;
+  }
+  
+  .testimonial-title {
+    text-align: left;
+    font-size: 38px;
+  }
+  
+  .rating-row {
+    justify-content: center;
+    text-align: left;
+  }
+}
+
+/* Mobile View (768px and below) */
+@media (max-width: 768px) {
+  .testimonial-section {
+    padding: 40px 0;
+  }
+  
+  .testimonial-wrapper {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+    max-width: 100%;
+  }
+  
+  .testimonial-left,
+  .testimonial-right {
+    width: 100%;
+  }
+  
+  .testimonial-image {
+    height: 300px;
+  }
+  
+  .testimonial-title {
+    font-size: 32px;
+    text-align: left;
+  }
+  
+  .rating-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 30px;
+    justify-content: flex-start;
+  }
+  
+  .rating-stars-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .rating {
+    font-size: 42px;
+    margin: 0;
+  }
+  
+  .stars {
+    margin: 0;
+  }
+  
+  .rating-text {
+    font-size: 18px !important;
+    margin: 0;
+    flex-basis: 100%;
+  }
+  
+  .arrows {
+    margin-left: 0;
+  }
+  
+  .testimonial-text {
+    font-size: 18px;
+    text-align: left;
+  }
+  
+  .client-info {
+    justify-content: flex-start;
+    flex-direction: row;
+    text-align: left;
+    gap: 12px;
+  }
+  
+  .client-icon {
+    font-size: 40px;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .testimonial-title {
+    font-size: 28px;
+  }
+  
+  .testimonial-image {
+    height: 250px;
+  }
+  
+  .rating {
+    font-size: 36px;
+  }
+  
+  .testimonial-text {
+    font-size: 16px;
+  }
+  
+  .arrows button {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+  
+  .rating-row {
+    gap: 10px;
+  }
+  
+  .rating-stars-container {
+    gap: 10px;
+  }
+}
+/* FIX: MacBook (13"–16") — Force Desktop Layout */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .testimonial-wrapper {
+    flex-direction: row-reverse !important;
+    max-width: 1200px !important;
+    gap: 40px !important;
+    padding: 0 !important;
+    align-items: flex-start !important;
+  }
+
+  .testimonial-left,
+  .testimonial-right {
+    width: 50% !important;
+  }
+
+  .testimonial-image {
+    height: 450px !important;
+  }
+
+  .testimonial-title {
+    font-size: 48px !important;
+    text-align: left !important;
+  }
+
+  .rating-row {
+    display: grid !important;
+    grid-template-columns: auto auto 1fr auto !important;
+    gap: 25px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .testimonial-text {
+    font-size: 24px !important;
+    text-align: left !important;
+  }
+
+  .client-info {
+    justify-content: flex-start !important;
+  }
+}

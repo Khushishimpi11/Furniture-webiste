@@ -1,0 +1,605 @@
+/* Banner.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  min-height: 700px;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://manufacturercss.microdinc.com/css/30119/customercontent/uploads/beyond-aesthetics-the-functional-considerations-of-wood-furniture-design.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.banner-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(8, 8, 8, 0.7) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+  z-index: 2;
+}
+
+.circles-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 3;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-outline {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.circle-image {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Desktop Circle Sizes - Default */
+.circle-1 {
+  width: 720px !important;
+  height: 720px !important;
+  top: -15% !important;
+  right: -18% !important;
+  z-index: 3 !important;
+}
+
+.circle-1 .img-1 {
+  background-image: url('https://hatil.com/blog/wp-content/uploads/2024/05/Newcastle-327-221-Set-2-1024x1024.jpg');
+}
+
+.circle-2 {
+  width: 550px !important;
+  height: 550px !important;
+  top: 15% !important;
+  right: 40% !important;
+  z-index: 3;
+}
+
+.circle-2 .img-2 {
+  background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80');
+}
+
+.circle-3 {
+  width: 420px !important;
+  height: 420px !important;
+  top: 50% !important;
+  right: 5% !important;
+  z-index: 5;
+}
+
+.circle-3 .img-3 {
+  background-image: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+}
+
+.content-section {
+  position: relative;
+  z-index: 4;
+  width: 50%;
+  padding: 0 5%;
+  color: white;
+}
+
+.text-content {
+  max-width: 600px;
+}
+
+.premium-badge {
+  display: inline-block;
+  background: transparent;
+  color: #d4af37;
+  padding: 8px 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #d4af37;
+  font-family: 'Inter', sans-serif;
+}
+
+.serif-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.4rem;
+  margin-bottom: 35px;
+  opacity: 0.95;
+  font-weight: 400;
+  line-height: 1.6;
+  font-style: italic;
+  color: #f8f8f8;
+  max-width: 90%;
+}
+
+.phone-info {
+  margin-top: 30px;
+}
+
+.phone-number {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.15rem;
+  font-weight: 500;
+  background: rgba(212, 175, 55, 0.12);
+  padding: 8px 16px !important;
+  border-radius: 6px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  backdrop-filter: blur(10px);
+  width: fit-content;
+  font-family: 'Inter', sans-serif;
+}
+
+
+.phone-number i {
+  color: #d4af37;
+  font-size: 1.2rem;
+}
+
+.phone-number span {
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* Enhanced Responsive Design */
+
+/* Large Desktop (1440px and above) */
+@media (min-width: 1440px) {
+  .banner-container {
+    height: 100vh;
+    min-height: 800px;
+  }
+  
+  .serif-heading {
+    font-size: 3.5rem;
+  }
+  
+  .circle-1 {
+    width: 800px;
+    height: 800px;
+  }
+  
+  .circle-2 {
+    width: 650px;
+    height: 650px;
+  }
+  
+  .circle-3 {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+/* Desktop (1200px - 1439px) - Maintain original design */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  /* Keep original desktop styles */
+}
+
+/* Small Desktop (1024px - 1199px) */
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .circle-1 {
+    width: 650px;
+    height: 650px;
+    top: -20%;
+    right: -20%;
+  }
+  
+  .circle-2 {
+    width: 520px;
+    height: 520px;
+    top: 15%;
+    right: 35%;
+  }
+  
+  .circle-3 {
+    width: 380px;
+    height: 380px;
+    top: 50%;
+    right: 3%;
+  }
+  
+  .serif-heading {
+    font-size: 2.9rem;
+  }
+}
+
+/* Tablet Landscape (968px - 1023px) */
+@media (max-width: 1023px) and (min-width: 968px) {
+  .content-section {
+    width: 55%;
+  }
+  
+  .serif-heading {
+    font-size: 2.6rem;
+  }
+  
+  .subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .circle-1 {
+    width: 550px;
+    height: 550px;
+    top: -15%;
+    right: -15%;
+  }
+  
+  .circle-2 {
+    width: 450px;
+    height: 450px;
+    top: 20%;
+    right: 30%;
+  }
+  
+  .circle-3 {
+    width: 350px;
+    height: 350px;
+    top: 55%;
+    right: 2%;
+  }
+}
+
+/* Tablet Portrait (768px - 967px) */
+@media (max-width: 967px) and (min-width: 768px) {
+  .banner-container {
+    height: 100vh;
+    min-height: 650px;
+  }
+  
+  .content-section {
+    width: 60%;
+    padding: 0 6%;
+  }
+  
+  .serif-heading {
+    font-size: 2.4rem;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    max-width: 95%;
+  }
+  
+  /* Tablet-specific circle sizes - these won't affect desktop */
+  .circle-1 {
+    width: 550px !important;
+    height: 550px !important;
+    top: -10% !important;
+    right: -25% !important;
+  }
+  
+  .circle-2 {
+    width: 430px !important;
+    height: 430px !important;
+    top: 30% !important;
+    right: 10% !important;
+  }
+  
+  .circle-3 {
+    width: 350px !important;
+    height: 350px !important;
+    top: 60% !important;
+    right: 3%;
+  }
+  
+  .phone-number {
+    font-size: 1.2rem;
+    padding: 10px 22px;
+  }
+}
+
+/* Mobile Devices (768px and below) - Hide circles and center content */
+@media (max-width: 768px) {
+  .banner-container {
+    height: 100vh;
+    min-height: 600px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .content-section {
+    width: 100%;
+    padding: 0 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .circles-container {
+    display: none; /* Hide circles on mobile */
+  }
+  
+   .banner-bg::after {
+    background: linear-gradient(180deg, rgba(8, 8, 8, 0.8) 0%, rgba(0,0,0,0.6) 100%); /* Full overlay for better text readability */
+  }
+  
+  .serif-heading {
+    font-size: 2.3rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    max-width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .premium-badge {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .phone-info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .phone-number {
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+
+/* Large Mobile (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .banner-container {
+    height: 95vh;
+    min-height: 550px;
+  }
+  
+  .content-section {
+    padding: 0 8%;
+  }
+  
+  .serif-heading {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .premium-badge {
+    font-size: 0.85rem;
+    letter-spacing: 2.5px;
+    margin-bottom: 15px;
+  }
+  
+  .phone-info {
+    margin-top: 25px;
+  }
+  
+  .phone-number {
+    font-size: 1.15rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Medium Mobile (425px - 575px) */
+@media (max-width: 575px) and (min-width: 425px) {
+  .banner-container {
+    height: 90vh;
+    min-height: 500px;
+  }
+  
+  .content-section {
+    padding: 0 7%;
+  }
+  
+  .serif-heading {
+    font-size: 2rem;
+    line-height: 1.25;
+  }
+  
+  .subtitle {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+  }
+  
+  .premium-badge {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    padding: 6px 0;
+  }
+  
+  .phone-number {
+    font-size: 1.1rem;
+    padding: 9px 18px;
+    gap: 12px;
+  }
+}
+
+/* Small Mobile (375px - 424px) */
+@media (max-width: 424px) and (min-width: 375px) {
+  .banner-container {
+    height: 85vh;
+    min-height: 450px;
+  }
+  
+  .content-section {
+    padding: 0 6%;
+  }
+  
+  .serif-heading {
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 22px;
+  }
+  
+  .premium-badge {
+    font-size: 0.75rem;
+    letter-spacing: 1.8px;
+  }
+  
+  .phone-info {
+    margin-top: 20px;
+  }
+  
+  .phone-number {
+    font-size: 1.05rem;
+    padding: 8px 16px;
+    gap: 10px;
+  }
+}
+
+/* Extra Small Mobile (320px - 374px) */
+@media (max-width: 374px) {
+  .banner-container {
+    height: 80vh;
+    min-height: 500px;
+  }
+  
+  .content-section {
+    padding: 0 5%;
+  }
+  
+  .serif-heading {
+    font-size: 1.65rem;
+    margin-bottom: 15px;
+    letter-spacing: -0.3px;
+  }
+  
+  .subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    line-height: 1.45;
+  }
+  
+  .premium-badge {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    padding: 5px 0;
+    margin-bottom: 12px;
+  }
+  
+  .phone-info {
+    margin-top: 18px;
+  }
+  
+  .phone-number {
+    font-size: 1rem;
+    padding: 7px 14px;
+    gap: 8px;
+  }
+  
+  .phone-number i {
+    font-size: 1rem;
+  }
+}
+
+/* Very Small Mobile (below 320px) */
+@media (max-width: 319px) {
+  .banner-container {
+    height: 75vh;
+    min-height: 380px;
+  }
+  
+  .serif-heading {
+    font-size: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .premium-badge {
+    font-size: 0.65rem;
+    letter-spacing: 1.2px;
+  }
+  
+  .phone-number {
+    font-size: 0.95rem;
+    padding: 6px 12px;
+  }
+}
+
+/* Height adjustments for landscape mobiles */
+@media (max-height: 600px) and (orientation: landscape) and (max-width: 768px) {
+  .banner-container {
+    height: 130vh;
+    min-height: 400px;
+    padding-top: 60px;
+  }
+  
+  .content-section {
+    padding-top: 20px;
+  }
+  
+  .serif-heading {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+}

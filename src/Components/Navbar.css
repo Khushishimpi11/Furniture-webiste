@@ -1,0 +1,470 @@
+/* Navbar Overlay */
+.overlay-navbar {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 100%;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* Logo Style */
+.logo {
+  height: 150px;
+  width: auto;
+  z-index: 20;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  margin-left: 20px;
+}
+
+/* Menu icon (4 squares) */
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  z-index: 20;
+  position: relative;
+}
+
+.menu-icon .square {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Cross icon styles */
+.menu-icon.cross {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: none;
+  gap: 0;
+  transition: transform 0.4s ease;
+}
+
+.menu-icon.cross .square {
+  display: none;
+}
+
+.menu-icon.cross::before,
+.menu-icon.cross::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.menu-icon.cross::before {
+  transform: rotate(45deg);
+}
+
+.menu-icon.cross::after {
+  transform: rotate(-45deg);
+}
+
+/* Hover effect for cross - rotation */
+.menu-icon.cross:hover {
+  transform: rotate(90deg);
+}
+
+.menu-icon.cross:hover::before {
+  transform: rotate(135deg);
+}
+
+.menu-icon.cross:hover::after {
+  transform: rotate(45deg);
+}
+
+/* When active – soft rotation feel only */
+.menu-icon.active {
+  transform: rotate(90deg);
+}
+.menu-icon.active .square {
+  background-color: #d1d1d1;
+}
+
+/* Navigation links - Desktop */
+.nav-links {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 60px;
+  font-size: 22px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.6s ease;
+}
+
+/* Links hidden initially */
+.nav-links span {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.5s ease;
+  cursor: pointer;
+  color: white;
+  position: relative;
+}
+
+/* Underline animation */
+.nav-links span::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.nav-links span:hover::after {
+  width: 100%;
+}
+
+/* When show class active */
+.nav-links.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav-links.show span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reverse animation */
+.nav-links:not(.show) span {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* ========== MOBILE SLIDER NAVIGATION ========== */
+.mobile-nav-slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  overflow: hidden;
+  transition: height 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+  box-sizing: border-box;
+}
+
+.mobile-nav-slider.open {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mobile-nav-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease 0.3s;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.mobile-nav-slider.open .mobile-nav-content {
+  opacity: 1;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 24px;
+  font-family: 'Poppins', sans-serif;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.mobile-nav-links span {
+  color: white;
+  cursor: pointer;
+  padding: 10px 0;
+  position: relative;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: block;
+}
+
+.mobile-nav-slider.open .mobile-nav-links span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-nav-links span:hover {
+  color: #d1d1d1;
+}
+
+.mobile-nav-links span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.mobile-nav-links span:hover::after {
+  width: 80px;
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
+/* Large Desktop (1441px and above) - ORIGINAL DESKTOP VIEW */
+@media screen and (min-width: 1441px) {
+  .mobile-nav-slider {
+    display: none;
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+}
+
+/* MacBook & Medium Desktop (1025px to 1440px) - OPTIMIZED DESKTOP VIEW */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .overlay-navbar {
+    padding: 0 40px;
+  }
+  
+  .logo {
+    height: 130px;
+  }
+  
+  .logo img {
+    margin-left: 15px;
+  }
+  
+  .nav-links {
+    gap: 50px;
+    font-size: 20px;
+  }
+  
+  .mobile-nav-slider {
+    display: none;
+  }
+}
+
+/* Tablet and Mobile Devices (1024px and below) */
+@media screen and (max-width: 1024px) {
+  .overlay-navbar {
+    padding: 0 20px;
+    top: -10px;
+  }
+  
+  .logo {
+    height: 100px;
+  }
+  
+  .logo img {
+    margin-left: 10px;
+  }
+  
+  /* Hide desktop nav links on tablet and mobile */
+  .nav-links {
+    display: none;
+  }
+  
+  .menu-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  /* FIX: Prevent body scrolling when mobile nav is open */
+  body.nav-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .mobile-nav-slider {
+    display: block;
+  }
+  
+  .mobile-nav-links {
+    font-size: 22px;
+    gap: 25px;
+  }
+}
+
+/* Large Mobile Devices (577px to 768px) */
+@media screen and (max-width: 768px) and (min-width: 577px) {
+  .overlay-navbar {
+    padding: 0 15px;
+  }
+  
+  .logo {
+    height: 90px;
+  }
+  
+  .mobile-nav-links {
+    font-size: 20px;
+    gap: 20px;
+  }
+}
+
+/* Small Mobile Devices (481px to 576px) */
+@media screen and (max-width: 576px) and (min-width: 481px) {
+  .overlay-navbar {
+    padding: 0 12px;
+    top: -5px;
+  }
+  
+  .logo {
+    height: 80px;
+  }
+  
+  .menu-icon {
+    width: 26px;
+    height: 26px;
+    gap: 3px;
+  }
+  
+  .mobile-nav-links {
+    font-size: 18px;
+    gap: 18px;
+  }
+  
+  .mobile-nav-content {
+    padding: 0 15px;
+  }
+}
+
+/* Extra Small Mobile Devices (321px to 480px) */
+@media screen and (max-width: 480px) and (min-width: 321px) {
+  .overlay-navbar {
+    padding: 0 10px;
+    top: 0;
+  }
+  
+  .logo {
+    height: 70px;
+  }
+  
+  .logo img {
+    margin-left: 5px;
+  }
+  
+  .menu-icon {
+    width: 24px;
+    height: 24px;
+    gap: 2px;
+  }
+  
+  .menu-icon .square {
+    border-radius: 1px;
+  }
+  
+  .mobile-nav-links {
+    font-size: 18px;
+    gap: 15px;
+  }
+  
+  .mobile-nav-content {
+    padding: 0 12px;
+  }
+}
+
+/* Very Small Devices (below 320px) */
+@media screen and (max-width: 320px) {
+  .overlay-navbar {
+    padding: 0 8px;
+    top: 0;
+  }
+  
+  .logo {
+    height: 60px;
+  }
+  
+  .menu-icon {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .mobile-nav-links {
+    font-size: 16px;
+    gap: 12px;
+  }
+  
+  .mobile-nav-content {
+    padding: 0 10px;
+  }
+}
+
+/* FIX: Global fix to prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
+}
+
+/* FIX: Ensure all elements don't cause overflow */
+* {
+  box-sizing: border-box;
+}
+
+/* FIX: Additional mobile-specific fixes */
+@media screen and (max-width: 1024px) {
+  /* Prevent any horizontal scrolling */
+  body {
+    width: 100%;
+    position: relative;
+  }
+  
+  /* Ensure navbar doesn't cause overflow */
+  .overlay-navbar {
+    max-width: 100vw;
+  }
+  
+  /* Fix for mobile nav slider */
+  .mobile-nav-slider {
+    width: 100vw;
+    left: 0;
+    right: 0;
+  }
+  
+  /* Prevent content from overflowing */
+  .mobile-nav-content,
+  .mobile-nav-links {
+    max-width: 100vw;
+    width: 100%;
+  }
+}

@@ -1,0 +1,299 @@
+/* ===== COLOR PALETTE =====
+Primary (Gold Accent): #A48A5E
+Secondary (Dark Brown): #605436
+Background (Light Cream): #F7F4EF
+Highlight / Hover: #CBB47B
+Dark Overlay: rgba(96,84,54,0.85)
+=========================== */
+
+.industries-section {
+  background-color: #F7F4EF;
+  color: #605436;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.industries-title {
+  font-size: 2.7rem;
+  margin-bottom: 70px;
+  font-weight: 600;
+  color: #605436;
+}
+
+.industries-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 110px;
+}
+
+.industry-card {
+  position: relative;
+  width: 140px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.industry-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-img {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.icon-bg {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 100px;
+  height: 100px;
+  background-color: #baa47a;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 1;
+  transition: all 0.45s ease;
+}
+
+.industry-card:hover .icon-bg {
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.3);
+  background-color: #CBB47B;
+}
+
+.industry-card:hover .icon-img {
+  transform: translateX(0);
+}
+
+.industry-name {
+  font-size: 1.8rem;
+  color: #605436;
+  margin-top: 30px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+  margin-left: -5px;
+}
+
+/* ===== Enhanced Responsive Design ===== */
+
+/* Large Tablets (1024px and below) */
+@media (max-width: 1024px) {
+  .industries-grid {
+    gap: 90px;
+  }
+  
+  .industry-card {
+    width: 130px;
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .industries-section {
+    padding: 60px 20px;
+  }
+  
+  .industries-title {
+    font-size: 2.3rem;
+    margin-bottom: 60px;
+  }
+  
+  .industries-grid {
+    gap: 70px;
+  }
+  
+  .industry-card {
+    width: 120px;
+  }
+  
+  .icon-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .icon-img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .icon-bg {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .industry-name {
+    font-size: 1.5rem;
+    margin-top: 25px;
+  }
+}
+
+/* Small Tablets and Large Phones (600px and below) */
+@media (max-width: 600px) {
+  .industries-section {
+    padding: 50px 20px;
+  }
+  
+  .industries-title {
+    font-size: 2rem;
+    margin-bottom: 50px;
+  }
+  
+  .industries-grid {
+    gap: 50px;
+  }
+  
+  .industry-card {
+    width: 110px;
+  }
+  
+  .icon-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .icon-img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .icon-bg {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .industry-name {
+    font-size: 1.3rem;
+    margin-top: 20px;
+  }
+}
+
+/* Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+  .industries-section {
+    padding: 40px 15px;
+  }
+  
+  .industries-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+  
+  .industries-grid {
+    gap: 40px;
+    row-gap: 50px;
+  }
+  
+  .industry-card {
+    width: 100px;
+  }
+  
+  .icon-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .icon-img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .icon-bg {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .industry-name {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    margin-left: 0;
+  }
+}
+
+/* Small Mobile Phones (360px and below) */
+@media (max-width: 360px) {
+  .industries-section {
+    padding: 35px 10px;
+  }
+  
+  .industries-title {
+    font-size: 1.6rem;
+    margin-bottom: 35px;
+  }
+  
+  .industries-grid {
+    gap: 30px;
+    row-gap: 40px;
+  }
+  
+  .industry-card {
+    width: 90px;
+  }
+  
+  .icon-wrapper {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .icon-img {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .icon-bg {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .industry-name {
+    font-size: 1rem;
+    margin-top: 12px;
+  }
+}
+
+/* Extra Small Mobile Phones (320px and below) */
+@media (max-width: 320px) {
+  .industries-grid {
+    gap: 25px;
+    row-gap: 35px;
+  }
+  
+  .industry-card {
+    width: 85px;
+  }
+  
+  .icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .icon-img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .icon-bg {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .industry-name {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
+
+.core-marquee {
+  width: 100%;
+  overflow: hidden;
+  background-color: #605436; /* Requested color */
+  padding: 40px 0;
+  position: relative;
+}
+
+.core-track {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+  animation: core-scroll 25s linear infinite;
+}
+
+/* Pause animation on hover */
+.core-marquee:hover .core-track {
+  animation-play-state: paused;
+}
+
+.core-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 35px;
+  color: #fffdf7;
+  font-size: 1.6rem;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+  position: relative;
+  text-transform: uppercase;
+  transition: transform 0.3s ease;
+}
+
+.core-item:hover {
+  transform: scale(1.08);
+}
+
+/* Animated ✦ separator */
+.core-star {
+  display: inline-block;
+  margin-left: 25px;
+  color: #fff8d6;
+  font-size: 1.8rem;
+  opacity: 0.85;
+}
+
+/* Continuous scroll animation */
+@keyframes core-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .core-marquee {
+    padding: 25px 0; /* Reduced padding for mobile */
+  }
+  
+  .core-track {
+    animation: core-scroll 20s linear infinite; /* Slightly faster on mobile */
+  }
+  
+  .core-item {
+    font-size: 1.1rem;
+    margin: 0 20px;
+    letter-spacing: 0.5px; /* Reduced letter spacing for mobile */
+  }
+  
+  .core-star {
+    font-size: 1.3rem;
+    margin-left: 15px;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .core-marquee {
+    padding: 20px 0;
+  }
+  
+  .core-item {
+    font-size: 1rem;
+    margin: 0 15px;
+  }
+  
+  .core-star {
+    font-size: 1.1rem;
+    margin-left: 12px;
+  }
+}

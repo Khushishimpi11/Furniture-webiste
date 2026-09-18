@@ -1,0 +1,424 @@
+/* ----------------------------- */
+/* OUR EXPERTISE SECTION STYLES */
+/* ----------------------------- */
+
+.our-expertise-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f7f4ef; /* fallback background */
+  color: #fff;
+  padding: 100px 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Light overlay on top of background image */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 244, 239, 0.55); /* 0.55 gives a soft transparent tint */
+  z-index: 1;
+}
+/* Container */
+.expertise-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  color: #2d2d2d;
+}
+
+/* ----------------------------- */
+/* HEADER */
+/* ----------------------------- */
+
+.expertise-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #F7F4EF;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  gap: 6px;
+  padding: 6px 16px;
+  background: #605436; /* Light background */
+  border: 1px solid #a48a5e; /* Optional: gold border */
+  border-radius: 50px; /* Rounded on both sides */
+  margin-bottom: 10px;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.expertise-label:hover {
+  background: #a48a5e;
+  color: #fff;
+}
+
+
+.expertise-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #a48a5e;
+  margin-bottom: 15px;
+}
+
+.expertise-subtext {
+  max-width: 700px !important;
+  line-height: 1.6;
+  color: #4b4b4b;
+  font-size: 1.08rem;
+}
+
+/* ----------------------------- */
+/* CONTENT LAYOUT */
+/* ----------------------------- */
+
+.expertise-content {
+  display: flex;
+  flex-direction: row; /* 👈 image on right, text on left */
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 60px;
+  gap: 50px;
+}
+
+/* Left side (image area) */
+.expertise-left {
+  flex: 1;
+  position: relative;
+}
+
+.expertise-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+  border: 2px solid #a48a5e;
+  padding: 20px;
+}
+
+.expertise-image img {
+  width: 100%;
+  display: block; /* ✅ fix for space under image */
+  border-radius: none;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.expertise-image:hover img {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+
+/* Title overlay on image */
+.expertise-image-title {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(41, 31, 4, 0.6);
+  padding: 8px 16px;
+  border-radius: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ----------------------------- */
+/* Right side (text items) */
+/* ----------------------------- */
+
+.expertise-right {
+  flex: 1;
+}
+
+.expertise-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 25px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.expertise-item:hover {
+  background-color: rgba(164, 138, 94, 0.05);
+}
+
+.expertise-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.expertise-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a48a5e; /* default same as text */
+  min-width: 35px;
+  transition: color 0.3s ease; /* smooth color change */
+}
+
+.expertise-item:hover .expertise-number,
+.expertise-item.active .expertise-number {
+  color: #605436; /* same gold tone as active text */
+}
+
+.expertise-item h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a48a5e;
+  transition: color 0.3s ease;
+}
+
+/* Hover & Active states */
+.expertise-item:hover h3,
+.expertise-item.active h3 {
+  color: #605436;
+}
+
+/* ----------------------------- */
+/* DESCRIPTION ALIGNMENT */
+/* ----------------------------- */
+
+.expertise-desc {
+  margin-top: 10px;
+  margin-left: 55px; /* aligns description start with title */
+  color: #4b4b4b;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.expertise-desc ul {
+  padding-left: 20px;
+}
+
+.expertise-desc li {
+  list-style: disc;
+  margin-bottom: 6px;
+}
+
+/* ----------------------------- */
+/* RESPONSIVE */
+/* ----------------------------- */
+
+@media (max-width: 1200px) {
+  .expertise-container {
+    padding: 0 30px;
+  }
+  
+  .expertise-content {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .expertise-content {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 50px;
+  }
+
+  .expertise-left,
+  .expertise-right {
+    width: 100%;
+  }
+
+  .expertise-title {
+    font-size: 2.2rem;
+  }
+
+  .expertise-desc {
+    margin-left: 55px;
+  }
+  
+  .our-expertise-section {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .expertise-container {
+    padding: 0 25px;
+  }
+  
+  .expertise-title {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+  
+  .expertise-subtext {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .expertise-heading {
+    gap: 15px;
+  }
+  
+  .expertise-item h3 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+  
+  .expertise-number {
+    font-size: 1.6rem;
+    min-width: 30px;
+  }
+  
+  .expertise-desc {
+    margin-left: 45px;
+    font-size: 1rem;
+  }
+  
+  .expertise-image {
+    padding: 15px;
+  }
+  
+  .expertise-image-title {
+    bottom: 15px;
+    left: 15px;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .expertise-container {
+    padding: 0 20px;
+  }
+  
+  .our-expertise-section {
+    padding: 60px 0;
+  }
+  
+  .expertise-title {
+    font-size: 1.8rem;
+  }
+  
+  .expertise-label {
+    font-size: 0.8rem;
+    padding: 5px 14px;
+    letter-spacing: 1.5px;
+  }
+  
+  .expertise-heading {
+    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .expertise-item h3 {
+    font-size: 1.4rem;
+  }
+  
+  .expertise-number {
+    font-size: 1.4rem;
+    min-width: 25px;
+  }
+  
+  .expertise-desc {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+  
+  .expertise-item {
+    padding: 20px 0;
+  }
+  
+  .expertise-content {
+    margin-top: 40px;
+    gap: 30px;
+  }
+  
+  .expertise-image {
+    padding: 12px;
+    border-width: 1px;
+  }
+  
+  .expertise-image-title {
+    bottom: 12px;
+    left: 12px;
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+  
+  .expertise-desc ul {
+    padding-left: 18px;
+  }
+  
+  .expertise-desc li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .expertise-container {
+    padding: 0 15px;
+  }
+  
+  .expertise-title {
+    font-size: 1.6rem;
+  }
+  
+  .expertise-item h3 {
+    font-size: 1.3rem;
+  }
+  
+  .expertise-number {
+    font-size: 1.3rem;
+  }
+  
+  .expertise-desc {
+    font-size: 0.95rem;
+  }
+  
+  .expertise-label {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    letter-spacing: 1px;
+  }
+  
+  .expertise-subtext {
+    font-size: 0.95rem;
+  }
+  
+  .our-expertise-section {
+    padding: 50px 0;
+  }
+  
+  .expertise-content {
+    margin-top: 35px;
+    gap: 25px;
+  }
+  
+  .expertise-item {
+    padding: 18px 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .expertise-title {
+    font-size: 1.4rem;
+  }
+  
+  .expertise-item h3 {
+    font-size: 1.2rem;
+  }
+  
+  .expertise-number {
+    font-size: 1.2rem;
+  }
+  
+  .expertise-desc {
+    font-size: 0.9rem;
+  }
+  
+  .expertise-container {
+    padding: 0 12px;
+  }
+}

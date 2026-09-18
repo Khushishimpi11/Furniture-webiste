@@ -1,0 +1,737 @@
+/* ----------------------------- */
+/* OUR PROCESS SECTION STYLES */
+/* ----------------------------- */
+
+.our-process-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f7f4ef;
+  color: #fff;
+  padding: 100px 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Light overlay on top of background image */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 244, 239, 0.55);
+  z-index: 1;
+}
+
+/* Container */
+.process-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px !important;
+  margin: 0 auto;
+  padding: 0 40px;
+  color: #2d2d2d;
+}
+
+/* ----------------------------- */
+/* HEADER */
+/* ----------------------------- */
+
+.process-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #F7F4EF;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  gap: 6px;
+  padding: 6px 16px;
+  background: #605436;
+  border: 1px solid #a48a5e;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.process-label:hover {
+  background: #a48a5e;
+  color: #fff;
+}
+
+.process-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #a48a5e;
+  margin-bottom: 15px;
+}
+
+.process-subtext {
+  max-width: 700px !important;
+  line-height: 1.6;
+  color: #4b4b4b;
+  font-size: 1.08rem;
+}
+
+/* ----------------------------- */
+/* CONTENT LAYOUT */
+/* ----------------------------- */
+
+.process-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 60px;
+  gap: 50px;
+}
+
+/* Left side (image area) */
+.process-left {
+  flex: 1;
+  position: relative;
+}
+
+.process-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: none;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.5s ease;
+  border: 2px solid #a48a5e;
+  padding: 15px;
+  background: transparent;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.process-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.process-main-image.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.process-main-image.slide-in-left {
+  transform: translateX(-100%);
+}
+
+.process-main-image.slide-in-right {
+  transform: translateX(100%);
+}
+
+.process-image:hover .process-main-image {
+  transform: scale(1.02);
+}
+
+/* Title overlay on image */
+.process-image-title {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  background: rgba(41, 31, 4, 0.75);
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  backdrop-filter: blur(2px);
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+/* ----------------------------- */
+/* Right side (text items) */
+/* ----------------------------- */
+
+.process-right {
+  flex: 1;
+}
+
+.process-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 25px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.process-item:hover {
+  background-color: rgba(164, 138, 94, 0.05);
+}
+
+.process-item.active {
+  background-color: rgba(164, 138, 94, 0.08);
+}
+
+.process-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.process-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a48a5e;
+  min-width: 35px;
+  transition: color 0.3s ease;
+}
+
+.process-item:hover .process-number,
+.process-item.active .process-number {
+  color: #605436;
+}
+
+.process-item h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a48a5e;
+  transition: color 0.3s ease;
+}
+
+.process-item:hover h3,
+.process-item.active h3 {
+  color: #605436;
+}
+
+/* ----------------------------- */
+/* DESCRIPTION ANIMATION */
+/* ----------------------------- */
+
+.process-desc {
+  margin-top: 10px;
+  margin-left: 55px;
+  color: #4b4b4b;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.process-item:hover .process-desc,
+.process-item.active .process-desc {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 15px;
+}
+
+/* ----------------------------- */
+/* SLIDER ANIMATION */
+/* ----------------------------- */
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideOutToRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.process-main-image.sliding-in-right {
+  animation: slideInFromRight 0.6s ease-out forwards;
+}
+
+.process-main-image.sliding-in-left {
+  animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+.process-main-image.sliding-out-left {
+  animation: slideOutToLeft 0.6s ease-out forwards;
+}
+
+.process-main-image.sliding-out-right {
+  animation: slideOutToRight 0.6s ease-out forwards;
+}
+
+/* ----------------------------- */
+/* MOCKUP STYLES */
+/* ----------------------------- */
+
+.process-mockup {
+  position: absolute;
+  width: 400px;
+  height: auto;
+  z-index: 10;
+  filter: drop-shadow(0 20px 30px rgba(96, 84, 54, 0.9));
+  transition: all 0.4s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.process-mockup img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.process-mockup:hover {
+  transform: translateY(-5px) rotate(2deg);
+  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.4));
+}
+
+.process-mockup:hover img {
+  transform: scale(1.05);
+}
+
+.process-mockup-top {
+  top: -50px;
+  right: 100px;
+}
+
+.process-mockup-bottom {
+  bottom: -50px;
+  left: 100px;
+}
+
+/* ----------------------------- */
+/* RESPONSIVE DESIGN */
+/* ----------------------------- */
+
+/* Large Desktop (1400px and above) - No changes, desktop view preserved */
+
+/* Medium Desktop (1200px - 1399px) */
+@media (max-width: 1399px) {
+  .process-container {
+    padding: 0 30px;
+  }
+  
+  .process-mockup {
+    width: 350px;
+  }
+}
+
+/* Small Desktop (992px - 1199px) */
+@media (max-width: 1199px) {
+  .process-container {
+    padding: 0 25px;
+  }
+  
+  .process-content {
+    gap: 40px;
+  }
+  
+  .process-mockup {
+    width: 300px;
+  }
+  
+  .process-mockup-top {
+    top: -30px;
+    right: 80px;
+  }
+  
+  .process-mockup-bottom {
+    bottom: -30px;
+    left: 80px;
+  }
+}
+
+/* Tablet Landscape (768px - 991px) */
+@media (max-width: 991px) {
+  .our-process-section {
+    padding: 80px 0;
+  }
+  
+  .process-container {
+    padding: 0 20px;
+  }
+  
+  .process-title {
+    font-size: 2.4rem;
+  }
+  
+  .process-content {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 50px;
+  }
+  
+  .process-left,
+  .process-right {
+    width: 100%;
+  }
+  
+  .process-image {
+    height: 450px;
+    margin-bottom: 20px;
+  }
+  
+  .process-mockup {
+    width: 250px;
+  }
+  
+  .process-mockup-top {
+    top: -20px;
+    right: 50px;
+  }
+  
+  .process-mockup-bottom {
+    bottom: -20px;
+    left: 50px;
+  }
+  
+  .process-desc {
+    margin-left: 0;
+  }
+}
+
+/* Tablet Portrait (600px - 767px) */
+@media (max-width: 767px) {
+  .our-process-section {
+    padding: 60px 0;
+  }
+  
+  .process-container {
+    padding: 0 20px;
+  }
+  
+ 
+  .process-title {
+    font-size: 1.6rem !important;   /* Smaller so lines don’t break awkwardly */
+    line-height: 2.1rem !important; /* Balanced spacing between lines */
+    word-break: keep-all !important; /* Prevents breaking words like "to" */
+    white-space: normal !important;  /* Allows natural wrapping */
+    margin-bottom: 10px !important;
+    max-width: 100%;
+  }
+
+  .process-subtext {
+    margin-top: 5px;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  
+  .process-content {
+    margin-top: 40px;
+    gap: 30px;
+  }
+  
+  .process-image {
+    height: 400px;
+    padding: 12px;
+    margin-top: -10px !important; /* Added margin to push image down */
+  }
+  
+  .process-image-title {
+    bottom: 20px;
+    left: 20px;
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+  
+  .process-mockup {
+    width: 200px;
+  }
+  
+  .process-mockup-top {
+    top: -22px !important; /* Adjusted to show properly */
+    right: 30px;
+  }
+  
+  .process-mockup-bottom {
+    bottom: 10px; /* Adjusted to show properly */
+    left: 30px;
+  }
+  
+  .process-item {
+    padding: 20px 0;
+  }
+  
+  .process-heading {
+    gap: 15px;
+  }
+  
+  .process-number {
+    font-size: 1.8rem;
+    min-width: 30px;
+  }
+  
+  .process-item h3 {
+    font-size: 1.8rem;
+  
+  }
+  
+  .process-desc {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Large (480px - 599px) */
+@media (max-width: 599px) {
+  .our-process-section {
+    padding: 50px 0;
+  }
+  
+  .process-container {
+    padding: 0 15px;
+  }
+  
+  .process-label {
+    font-size: 0.8rem;
+    padding: 5px 14px;
+    letter-spacing: 1.5px;
+  }
+  
+  .process-title {
+    font-size: 2rem;
+    margin-bottom: 15px; /* Increased margin */
+  }
+  
+  .process-subtext {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px; /* Increased margin */
+  }
+  
+  .process-content {
+    margin-top: 35px;
+    gap: 25px;
+  }
+  
+  .process-image {
+    height: 350px;
+    padding: 10px;
+    margin-top: 40px; /* Increased margin to push image further down */
+  }
+  
+  .process-image-title {
+    bottom: 15px;
+    left: 15px;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+  
+  .process-mockup {
+    width: 150px;
+  }
+  
+  .process-mockup-top {
+    top: 15px; /* Further adjusted for mobile */
+    right: 20px;
+  }
+  
+  .process-mockup-bottom {
+    bottom: 15px; /* Further adjusted for mobile */
+    left: 20px;
+  }
+  
+  .process-item {
+    padding: 18px 0;
+  }
+  
+  .process-heading {
+    gap: 12px;
+  }
+  
+  .process-number {
+    font-size: 1.6rem;
+    min-width: 25px;
+  }
+  
+  .process-item h3 {
+    font-size: 1.6rem;
+  }
+  
+  .process-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+/* Mobile Small (320px - 479px) */
+@media (max-width: 479px) {
+  .our-process-section {
+    padding: 40px 0;
+  }
+  
+  .process-container {
+    padding: 0 12px;
+  }
+  
+  .process-label {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  
+  .process-title {
+    font-size: 1.8rem;
+    margin-bottom: 12px; /* Increased margin */
+  }
+  
+  .process-subtext {
+    font-size: 0.9rem;
+    margin-bottom: 12px; /* Increased margin */
+  }
+  
+  .process-content {
+    margin-top: 30px;
+    gap: 20px;
+  }
+  
+  .process-image {
+    height: 300px;
+    padding: 8px;
+    margin-top: 50px; /* Further increased margin for small mobile */
+  }
+  
+  .process-image-title {
+    bottom: 12px;
+    left: 12px;
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+  
+  .process-mockup {
+    width: 120px;
+  }
+  
+  .process-mockup-top {
+    top: 20px; /* Adjusted for small mobile */
+    right: 15px;
+  }
+  
+  .process-mockup-bottom {
+    bottom: 20px; /* Adjusted for small mobile */
+    left: 15px;
+  }
+  
+  .process-item {
+    padding: 15px 0;
+  }
+  
+  .process-heading {
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .process-number {
+    font-size: 1.4rem;
+    min-width: 20px;
+  }
+  
+  .process-item h3 {
+    font-size: 1.4rem;
+  }
+  
+  .process-desc {
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+  
+  .process-item:hover .process-desc,
+  .process-item.active .process-desc {
+    margin-top: 10px;
+    max-height: 300px;
+  }
+}
+
+/* Extra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+  .process-container {
+    padding: 0 10px;
+  }
+  
+  .process-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  
+  .process-subtext {
+    margin-bottom: 10px;
+  }
+  
+  .process-image {
+    height: 250px;
+    margin-top: 40px;
+  }
+  
+  .process-mockup {
+    width: 100px;
+  }
+  
+  .process-mockup-top {
+    top: 15px;
+    right: 10px;
+  }
+  
+  .process-mockup-bottom {
+    bottom: 15px;
+    left: 10px;
+  }
+  
+  .process-number {
+    font-size: 1.2rem;
+  }
+  
+  .process-item h3 {
+    font-size: 1.2rem;
+  }
+}

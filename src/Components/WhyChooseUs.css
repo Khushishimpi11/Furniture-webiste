@@ -1,0 +1,357 @@
+/* WhyChooseUs.css */
+.why-choose-section {
+  position: relative;
+  background-color: #605436;
+  color: #fff;
+  padding: 100px 60px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Top Content */
+.why-choose-top {
+  text-align: left;
+  max-width: 1400px;
+  margin: 0 auto 80px auto;
+  position: relative;
+  z-index: 2; /* Text ko upar lane ke liye */
+}
+
+.why-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #000;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  gap: 6px;
+  padding: 6px 16px;
+  background: #CBB47B;
+  border: 1px solid #a48a5e;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.why-title {
+  font-size: 2.8rem;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2; /* Text ko upar lane ke liye */
+}
+
+.why-title span {
+  color: #CBB47B;
+}
+
+.why-description {
+  color: #ebe9e9;
+  font-size: 1.08rem;
+  max-width: 700px !important;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2; /* Text ko upar lane ke liye */
+}
+
+/* Steps Section */
+.why-choose-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Steps ko upar lane ke liye */
+}
+
+.why-step {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+  position: relative;
+  word-wrap: break-word;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.why-step img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: all 0.4s ease;
+}
+
+/* Hover image effect */
+.why-step:hover img {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(203, 180, 123, 0.3);
+}
+
+.why-step:hover h3 {
+  color: #d4b78f;
+  transition: color 0.3s ease;
+}
+
+.divider-line {
+  height: 1.1px;
+  width: 100%;
+  background: linear-gradient(90deg, #c8a97e, transparent);
+  margin: 8px 0 15px;
+}
+
+.why-step p {
+  color: white;
+  font-size: 1.07rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* Stairs effect */
+.step-1 { margin-top: 0; }
+.step-2 { margin-top: 40px; }
+.step-3 { margin-top: 80px; }
+.step-4 { margin-top: 120px; }
+.step-5 { margin-top: 160px; }
+
+/* ----------------------------- */
+/* Sofa Mockup Decorative Image */
+/* ----------------------------- */
+.why-sofa-mockup {
+  position: absolute;
+  top: -50px;
+  right: 80px;
+  width: 490px;
+  z-index: 1; /* Mockup ko niche rakho */
+  opacity: 0.95;
+  border-radius: 8px;
+  filter: drop-shadow(0 15px 30px rgba(203, 180, 123, 0.55));
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Hover Interaction (Handled by JS movement) */
+.why-sofa-mockup:hover {
+  opacity: 1;
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+
+/* Laptop View (1000px - 1400px) */
+@media (max-width: 1400px) {
+  .why-sofa-mockup {
+    width: 400px;
+    right: 40px;
+    top: -30px;
+  }
+  
+  .why-title {
+    font-size: 2.4rem;
+  }
+}
+
+/* Tablet View (768px - 1000px) */
+@media (max-width: 1000px) {
+  .why-choose-section {
+    padding: 80px 40px;
+  }
+
+  .why-choose-steps {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .why-step {
+    margin-top: 0 !important;
+    width: 45%;
+    max-width: 300px;
+    min-width: 250px;
+  }
+
+  .why-title {
+    font-size: 2.2rem;
+  }
+
+  .why-description {
+    font-size: 1rem;
+  }
+  
+  .why-sofa-mockup {
+    display: none;
+  }
+}
+
+/* Mobile View (768px and below) */
+@media (max-width: 768px) {
+  .why-choose-section {
+    padding: 60px 20px;
+    overflow: hidden;
+  }
+
+  .why-choose-top {
+    text-align: left;
+    margin: 0 auto 50px auto;
+    padding: 0 10px;
+  }
+
+  .why-label {
+    margin: 0 0 15px 0;
+    font-size: 0.75rem;
+    padding: 5px 14px;
+    letter-spacing: 1.5px;
+  }
+
+  .why-title {
+    font-size: 1.8rem;
+    text-align: left;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Remove line breaks for mobile - sab ek line mein */
+  .why-title br {
+    display: none; /* Line breaks hide kar diye */
+  }
+
+  .why-description {
+    text-align: left;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0;
+  }
+
+  .why-choose-steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0 10px;
+  }
+
+  .why-step {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    margin: 0 !important;
+    padding: 0 5px;
+  }
+
+  .why-step img {
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  .why-step h3 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    padding: 0 5px;
+    text-align: left;
+  }
+
+  .divider-line {
+    background: linear-gradient(90deg, #c8a97e, transparent);
+    margin: 12px 0 15px;
+    width: 100%;
+    height: 1.1px;
+  }
+
+  .why-step p {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0;
+    text-align: left;
+  }
+
+  /* Hide sofa mockup on mobile */
+  .why-sofa-mockup {
+    display: none;
+  }
+}
+
+/* Small Mobile View (480px and below) */
+@media (max-width: 480px) {
+  .why-choose-section {
+    padding: 50px 15px;
+  }
+
+  .why-choose-top {
+    margin-bottom: 40px;
+  }
+
+  .why-title {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .why-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .why-step {
+    padding: 0;
+  }
+
+  .why-step img {
+    height: 180px;
+    border-radius: 8px;
+  }
+
+  .why-step h3 {
+    font-size: 1.2rem;
+    padding: 0;
+  }
+
+  .why-step p {
+    font-size: 0.95rem;
+    padding: 0;
+  }
+
+  .why-choose-steps {
+    gap: 25px;
+  }
+}
+
+/* Extra Small Mobile View (360px and below) */
+@media (max-width: 360px) {
+  .why-choose-section {
+    padding: 40px 12px;
+  }
+
+  .why-title {
+    font-size: 1.5rem;
+  }
+
+  .why-label {
+    font-size: 0.7rem;
+    padding: 4px 12px;
+  }
+
+  .why-step img {
+    height: 160px;
+  }
+
+  .why-step h3 {
+    font-size: 1.1rem;
+  }
+
+  .why-step p {
+    font-size: 0.9rem;
+  }
+}

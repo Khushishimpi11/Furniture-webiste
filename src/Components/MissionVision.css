@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Mission & Vision Section Styles */
+.mission-vision-section {
+  display: flex;
+  width: 100%;
+  height: auto;
+  min-height: 40vh;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Left Section (30%) */
+.left-section {
+  width: 30%;
+  background-color: #605436;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.left-content {
+  padding: 60px 40px 20px 40px;
+}
+
+.left-section h2 {
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif !important;
+}
+
+.left-section p {
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* Right Section (70%) */
+.right-section {
+  width: 70%;
+  background-color: #605436;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+/* Card Container */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Card Design */
+.card {
+  background: #F7F4EF;
+  width: 40%;
+  text-align: center;
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.icon-circle {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #F7F4EF;
+  border: 3px solid #605436;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.icon-circle .fa-icon {
+  font-size: 28px;
+  color: #605436;
+}
+
+/* Inner content (border appears below circle) */
+.card-inner {
+  padding: 50px 20px 25px 20px;
+  border-top: 3px solid #605436;
+}
+
+.card-title {
+  background-color: #605436;
+  color: #fff;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif !important;
+}
+
+.card-text {
+  font-size: 15px;
+  color: #333;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+/* Responsive Design for Mission & Vision */
+@media (max-width: 900px) {
+  .mission-vision-section {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+  
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+    margin-top: 40px;
+  }
+  
+  .card {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+  
+  .left-content {
+    padding: 40px 20px 20px 20px;
+  }
+  
+  .left-section h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    gap: 20px;
+  }
+  
+  .card {
+    width: 90%;
+  }
+  
+  .card-inner {
+    padding: 50px 15px 20px 15px;
+  }
+  
+  .left-section h2 {
+    font-size: 24px;
+  }
+  
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .icon-circle .fa-icon {
+    font-size: 24px;
+  }
+}
